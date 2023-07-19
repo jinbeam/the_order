@@ -1,0 +1,40 @@
+.Force_wrap .Support_title {
+  text-align: center;
+}
+.Force_wrap .Support_title p:nth-child(1) {
+  color: #aaa;
+  font-size: 25px;
+  font-family: 'TmonMonsori';
+}
+.Force_wrap .Support_title p:nth-child(2) {
+  color: #c90040;
+  font-size: 55px;
+  font-family: 'SUIT';
+  font-weight: 500;
+}
+.Force_wrap .Support_title span {
+  display: inline-block;
+  color: #222;
+  font-size: 20px;
+  margin: 30px 80px 0;
+  font-family: 'Noto Sans KR', sans-serif;
+  font-weight: 400;
+}
+.SupportContainer {
+  display: flex;
+  align-items: center;
+  height: 350px;
+  margin-top: 80px;
+  justify-content: center;
+}
+.SupportContainer img:nth-child(1),
+.SupportContainer img:nth-child(3),
+.SupportContainer img:nth-child(5) {
+  display: inline-flex;
+  align-self: flex-start;
+}
+.SupportContainer img:nth-child(2),
+.SupportContainer img:nth-child(4) {
+  display: inline-flex;
+  align-self: flex-end;
+}

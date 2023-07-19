@@ -1,0 +1,101 @@
+.System_Wrap {
+  background: url(../images/background/System_bg.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  /* width: auto; */
+  width: 103.5vw;
+  height: 100%;
+  padding: 80px 0;
+}
+
+.System_Wrap .System_title {
+  text-align: center;
+}
+.System_Wrap .System_title p:nth-child(1) {
+  color: #aaa;
+  font-size: 25px;
+  font-weight: bold;
+  font-family: 'TmonMonsori';
+}
+.System_Wrap .System_title p:nth-child(2) {
+  color: #fff;
+  font-size: 55px;
+  font-family: 'SUIT';
+  font-weight: 500;
+}
+ul {
+  list-style: none;
+  padding-left: 0;
+}
+.System_Wrap .System_Wrapper {
+  display: flex;
+  /* justify-content: center; */
+  margin: 0 auto;
+  align-items: center;
+  /* width: 100%; */
+  width: 70%;
+}
+
+/*  List Css */
+#List_Wrap {
+  width: fit-content;
+  margin-right: 160px;
+}
+#List_Wrap ul {
+  text-align: center;
+}
+#List_Wrap ul li {
+  font-size: 26px;
+  color: #666;
+}
+#List_Wrap ul li.item {
+  cursor: pointer;
+}
+
+#List_Wrap ul img {
+  padding: 10px 0;
+}
+#List_Wrap ul li.item {
+  border: 3px solid transparent;
+  padding: 20px 60px;
+  border-radius: 39px;
+  transition: border-color 0.3s ease-in-out;
+  font-family: 'Noto Sans KR', sans-serif;
+  font-weight: 700;
+}
+
+#List_Wrap ul li.item.selected {
+  border-color: #c90040;
+  background-color: #fff;
+}
+#List_Wrap ul li.item.selected::before {
+  content: url('../images/icon/plus.png');
+  position: relative;
+  left: -15px;
+}
+
+/* Swiper Slide */
+.System_Wrap .System_Wrapper .swiper {
+  /* width: 50%; */
+  width: 60%;
+  margin: 0;
+  text-align: center;
+}
+.System_Wrap .System_Wrapper .OrderSwiper .swiper-pagination {
+  bottom: 35px;
+}
+.System_Wrap .System_Wrapper .OrderSwiper .swiper-pagination-bullet {
+  background-color: #fff;
+  opacity: 1;
+}
+.System_Wrap .System_Wrapper .OrderSwiper .swiper-pagination-bullet-active {
+  background-color: #c90040;
+}
+/* 슬라이드 컴포넌트 */
+#Content_Wrap p {
+  color: #fff;
+  font-size: 20px;
+  margin-top: 40px;
+  font-family: 'Noto Sans KR', sans-serif;
+  font-weight: 400;
+}

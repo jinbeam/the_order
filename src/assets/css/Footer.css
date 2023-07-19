@@ -1,0 +1,61 @@
+#Footer_wrap {
+  display: flex;
+  background: #eee;
+  padding: 40px 410px 54px 260px;
+}
+#Footer_wrap .Footer_wrapper {
+  padding-left: 95px;
+}
+#Footer_wrap .Footer_wrapper .Footer_BlockFlex {
+  display: flex;
+  align-items: center;
+}
+#Footer_wrap .Footer_wrapper .Footer_BlockFlex:nth-child(1) {
+  justify-content: space-between;
+  margin-bottom: 45px;
+}
+#Footer_wrap .Footer_wrapper .Footer_BlockFlex > span {
+  color: #999;
+  font-size: 24px;
+  font-family: 'Noto Sans KR', sans-serif;
+  font-weight: 700;
+}
+#Footer_wrap .Footer_wrapper .Footer_BlockFlex > ul {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+#Footer_wrap .Footer_wrapper .Footer_BlockFlex > ul li {
+  color: #666;
+  font-size: 16px;
+  font-family: 'Noto Sans KR', sans-serif;
+  font-weight: 500;
+}
+#Footer_wrap
+  .Footer_wrapper
+  .Footer_BlockFlex:nth-child(2)
+  > ul
+  li:nth-child(1):after,
+#Footer_wrap
+  .Footer_wrapper
+  .Footer_BlockFlex:nth-child(2)
+  > ul
+  li:nth-child(2):after,
+#Footer_wrap
+  .Footer_wrapper
+  .Footer_BlockFlex:nth-child(2)
+  > ul
+  li:nth-child(4):after,
+#Footer_wrap
+  .Footer_wrapper
+  .Footer_BlockFlex:nth-child(2)
+  > ul
+  li:nth-child(5):after {
+  content: '｜';
+  padding: 0 10px;
+}
+#Footer_wrap .Footer_wrapper .Footer_BlockFlex > ul li .text-decoration {
+  text-decoration: none;
+  color: #666;
+  cursor: pointer;
+}

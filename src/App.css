@@ -1,3 +1,31 @@
+@font-face {
+  font-family: 'TmonMonsori';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_two@1.0/TmonMonsori.woff')
+    format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+@import url('https://webfontworld.github.io/sunn/SUIT.css');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap');
+#root {
+  overflow-x: hidden;
+}
+body {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-use-select: none;
+  user-select: none;
+}
+img {
+  -webkit-user-drag: none;
+  -khtml-user-drag: none;
+  -moz-user-drag: none;
+  -o-user-drag: none;
+  user-drag: none;
+}
+p {
+  margin: 0;
+}
 .App {
   text-align: center;
 }
