@@ -1,4 +1,4 @@
-import React, { useRef } from 'react'
+import React, { useRef, useState } from 'react'
 
 import '../assets/css/Popup.css'
 import CloseBtn from '../assets/images/icon/CloseBtn.png'
@@ -6,29 +6,61 @@ import emailjs from '@emailjs/browser'
 
 function Popup({ onClose }) {
   const form = useRef()
+  const [errors, setErrors] = useState({})
 
   const sendEmail = (e) => {
     e.preventDefault()
 
-    const industryValue = form.current.industry.value // 선택된 업종 값
-    const placeValue = form.current.Place.value // 선택된 장소 값
+    const storeNameValue = form.current.storeName.value
+    const industryValue = form.current.industry.value
+    const placeValue = form.current.Place.value
+    const tableValue = form.current.Table.value
+    const questionsValue = form.current.Questions.value
+
+    const errors = {}
+
+    // 필수 입력 필드 확인
+    if (!storeNameValue.trim()) {
+      errors.storeName = true
+    }
+    if (!industryValue.trim()) {
+      errors.industry = true
+    }
+    if (!placeValue.trim()) {
+      errors.Place = true
+    }
+    if (!tableValue.trim()) {
+      errors.Table = true
+    }
+    if (!questionsValue.trim()) {
+      errors.Questions = true
+    }
+
+    if (Object.keys(errors).length > 0) {
+      setErrors(errors)
+      return
+    }
 
     emailjs
       .sendForm(
-        process.env.REACT_APP_SERVICE_API_KEY, // 환경 변수 사용
-        process.env.REACT_APP_TEMPLATE_API_KEY, // 환경 변수 사용
+        'service_20fss86',
+        'template_4zr6n1q',
         e.target,
-        process.env.REACT_APP_PUBLIC_API_KEY, // 환경 변수 사용
+        'zTJr-nLA-xVHbw_M2',
       )
-      .then((result) => {
-        alert('상담신청이 접수되었습니다.')
-        form.current.reset()
-      })
-      .catch((error) => {
-        console.log(error.text)
-        alert('상담신청 접수실패.')
-      })
+      .then(
+        (result) => {
+          alert('상담신청이 접수되었습니다.')
+          form.current.reset()
+          window.location.reload() // 페이지 새로고침
+        },
+        (error) => {
+          console.log(error.text)
+          alert('상담신청 접수실패.')
+        },
+      )
   }
+
   return (
     <div className="PopupContainer">
       <div className="Popup">
@@ -43,12 +75,17 @@ function Popup({ onClose }) {
               id="storeName"
               placeholder="매장명을 입력해 주세요."
               name="storeName"
+              className={errors.storeName ? 'error' : ''}
             />
           </div>
           <div>
             <label htmlFor="industry">업종</label>
-            <select id="industry" name="industry">
-              <option value="" disabled defaultValue>
+            <select
+              id="industry"
+              name="industry"
+              className={errors.industry ? 'error' : ''}
+            >
+              <option value="" disabled selected>
                 매장명을 입력해 주세요.
               </option>
               <option value="서비스">서비스</option>
@@ -58,8 +95,12 @@ function Popup({ onClose }) {
           </div>
           <div>
             <label htmlFor="Place">장소</label>
-            <select id="Place" name="Place">
-              <option value="" disabled defaultValue>
+            <select
+              id="Place"
+              name="Place"
+              className={errors.Place ? 'error' : ''}
+            >
+              <option value="" disabled selected>
                 지역을 선택해 주세요.
               </option>
               <option value="서울">서울</option>
@@ -74,6 +115,7 @@ function Popup({ onClose }) {
               id="Table"
               name="Table"
               placeholder="테이블 개수를 입력해 주세요."
+              className={errors.Table ? 'error' : ''}
             />
           </div>
           <div>
@@ -83,6 +125,7 @@ function Popup({ onClose }) {
               id="Questions"
               cols="30"
               rows="10"
+              className={errors.Questions ? 'error' : ''}
             ></textarea>
           </div>
 

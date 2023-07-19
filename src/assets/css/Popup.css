@@ -1,3 +1,10 @@
+.Popup .Mail_Wrap div input.error,
+.Popup .Mail_Wrap div select.error,
+.Popup .Mail_Wrap div textarea.error {
+  border-color: red;
+  border-width: 2px;
+}
+
 .PopupContainer {
   position: fixed;
   top: 0;
